@@ -314,10 +314,10 @@ namespace Docu.Output.Rendering
                     sb.Append("this ");
                     markExtensionMethodInstance = false;
                 }
-                sb.Append(Format(parameter.Reference));
-                sb.Append(" ");
                 sb.Append(parameter.Name);
-                sb.Append(", ");
+				sb.Append(" : ");
+				sb.Append(Format(parameter.Reference));
+				sb.Append(", ");
             }
 
             if (sb.Length > 0)

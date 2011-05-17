@@ -2,7 +2,10 @@
   <h3 class="section">${title}</h3>
 
   <div id="${property.Name}" class="method" each="var property in properties">
-    <h4>${Format(property.ReturnType)} <strong>${h(property.Name)}</strong> <if condition="property.HasGet">get;</if> <if condition="property.HasSet">set;</if></h4>
+    <h4><strong>${h(property.Name)} : ${Format(property.ReturnType)}</strong> 
+    <if condition="property.HasGet"> get;</if> 
+    <if condition="property.HasSet"> set;</if>
+    </h4>
     <div class="content">
       <comment content="property.Summary" />
       <remarks content="property.Remarks" />

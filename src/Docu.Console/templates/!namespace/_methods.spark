@@ -2,7 +2,7 @@
 	<h3 class="section">${title}</h3>
 	
 	<div id="${method.Name}" class="method" each="var method in methods">
-		<h4>${Format(method.ReturnType)} <strong>${h(method.PrettyName)}</strong>(${OutputMethodParams(method)})</h4>
+		<h4><strong>${h(method.PrettyName)}</strong>(${OutputMethodParams(method)}) : ${Format(method.ReturnType)}</h4>
 		<div class="content">
       <comment content="method.Summary" />
       <remarks content="method.Remarks" />
@@ -14,7 +14,7 @@
         <h5>Parameters</h5>
 
         <for each="var param in method.Parameters">
-          <h6><code>${Format(param.Reference)}</code> ${param.Name}</h6>
+          <h6>${param.Name} : <code>${Format(param.Reference)}</code></h6>
           <p class="comments" if="!param.Summary.IsEmpty"><comment content="param.Summary" /></p>
         </for>
       </div>

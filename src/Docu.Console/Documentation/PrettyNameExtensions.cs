@@ -36,7 +36,7 @@ namespace Docu.Documentation
                 var sb = new StringBuilder();
 
                 sb.Append(type.Name.Substring(0, type.Name.IndexOf('`')));
-                sb.Append("<");
+                sb.Append("[");
 
                 foreach (Type argument in type.GetGenericArguments())
                 {
@@ -45,7 +45,7 @@ namespace Docu.Documentation
                 }
 
                 sb.Length -= 2;
-                sb.Append(">");
+                sb.Append("]");
 
                 return sb.ToString();
             }
@@ -64,7 +64,7 @@ namespace Docu.Documentation
                     name = method.Name.Substring(0, method.Name.IndexOf('`'));
 
                 sb.Append(name);
-                sb.Append("<");
+                sb.Append(".[");
 
                 foreach (Type argument in method.GetGenericArguments())
                 {
@@ -73,7 +73,7 @@ namespace Docu.Documentation
                 }
 
                 sb.Length -= 2;
-                sb.Append(">");
+                sb.Append("]");
 
                 return sb.ToString();
             }
